@@ -1,181 +1,187 @@
 /* Reset básico */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #121212;
-    color: #f5f5f5;
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212;
+  color: #f5f5f5;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 /* Sidebar (menu lateral) */
 .sidebar {
-    width: 220px;
-    background-color: #1e1e1e;
-    padding: 20px;
-    position: fixed;
-    height: 100%;
-    top: 0;
-    left: 0;
-    box-shadow: 2px 0 15px rgba(0, 255, 213, 0.3);
-    border-right: 3px solid #00ffd5;
-    transition: all 0.3s ease;
-    z-index: 10;
+  width: 220px;
+  background-color: #2c2c2c;
+  padding: 20px;
+  position: fixed;
+  height: 100%;
+  top: 0;
+  left: 0;
+  box-shadow: 2px 0 15px rgba(0, 255, 213, 0.3);
+  border-right: 3px solid #00ffd5;
+  transition: all 0.3s ease;
+  z-index: 10;
 }
 
 .sidebar h2 {
-    font-size: 1.6rem;
-    color: #00ffd5;
-    margin-bottom: 40px;
-    text-align: center;
+  font-size: 30px;
+  color: #00ffd5;
+  margin-bottom: 40px;
+  text-align: center;
 }
 
 .sidebar ul {
-    list-style: none;
+  list-style: none;
 }
 
 .sidebar ul li {
-    margin: 25px 0;
+  margin: 25px 0;
 }
 
 .sidebar ul li a {
-    text-decoration: none;
-    color: #f5f5f5;
-    transition: color 0.3s ease, padding-left 0.3s ease;
-    padding-left: 20px;
-    display: block;
-    border-left: 2px solid transparent;
-    font-size: 1.1rem;
+  text-decoration: none;
+  color: #f5f5f5;
+  transition: color 0.3s ease, padding-left 0.3s ease;
+  padding-left: 20px;
+  display: block;
+  border-left: 2px solid transparent;
+  font-size: 1.1rem;
 }
 
 .sidebar ul li a:hover {
-    color: #00ffd5;
-    border-left: 2px solid #00ffd5;
-    padding-left: 30px;
+  color: #00ffd5;
+  border-left: 2px solid #00ffd5;
+  padding-left: 30px;
 }
 
 /* Conteúdo principal */
 .main-content {
-    margin-left: 240px;
-    padding: 40px;
-    flex: 1;
+  margin-left: 240px;
+  padding: 40px;
+  flex: 1;
 }
 
 .main-content h1 {
-    font-size: 2rem;
-    margin-bottom: 30px;
-    color: #00ffd5;
-    text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #00ffd5;
+  text-align: center;
 }
 
-/* Cards de build */
+/* Cards de build igual aos cards de personagens */
 .build-card {
-    background-color: #1e1e1e;
-    border-left: 5px solid #00ffd5;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 0 15px rgba(0, 255, 213, 0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 15px rgba(0, 255, 213, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  border-left: 5px solid #00ffd5;
+  /* Mesma borda dos cards de personagens */
 }
 
 .build-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 25px #00ffd5;
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px #00ffd5;
 }
 
 .build-card h2 {
-    color: #ffffff;
-    margin-bottom: 10px;
+  color: #ffffff;
+  margin-bottom: 10px;
 }
 
 .build-card p {
-    color: #f5f5f5;
-    margin: 6px 0;
-    line-height: 1.4;
+  color: #f5f5f5;
+  margin: 6px 0;
+  line-height: 1.4;
+}
+
+.build-card p strong {
+  color: #00ffd5;
+  /* Cor para os destaques */
 }
 
 /* Responsividade para tablets */
 @media (max-width: 768px) {
-    .sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
-        border-right: none;
-        border-bottom: 3px solid #00ffd5;
-        box-shadow: 0 2px 15px rgba(0, 255, 213, 0.3);
-        text-align: center;
-    }
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    border-right: none;
+    border-bottom: 3px solid #00ffd5;
+    box-shadow: 0 2px 15px rgba(0, 255, 213, 0.3);
+    text-align: center;
+  }
 
-    .sidebar ul li a {
-        padding-left: 0;
-        font-size: 1rem;
-        border: none;
-    }
+  .sidebar ul li a {
+    padding-left: 0;
+    font-size: 1rem;
+    border: none;
+  }
 
-    .sidebar ul {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 20px;
-    }
+  .sidebar ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
 
-    .main-content {
-        margin-left: 0;
-        padding: 30px 20px;
-    }
+  .main-content {
+    margin-left: 0;
+    padding: 30px 20px;
+  }
 
-    .main-content h1 {
-        font-size: 1.6rem;
-    }
+  .main-content h1 {
+    font-size: 1.6rem;
+  }
 
-    .build-card {
-        padding: 15px;
-    }
+  .build-card {
+    padding: 15px;
+  }
 
-    .build-card h2 {
-        font-size: 1.4rem;
-    }
+  .build-card h2 {
+    font-size: 1.4rem;
+  }
 
-    .build-card p {
-        font-size: 1rem;
-    }
+  .build-card p {
+    font-size: 1rem;
+  }
 }
 
 /* Responsividade para celulares */
 @media (max-width: 480px) {
-    .sidebar {
-        padding: 10px;
-    }
+  .sidebar {
+    padding: 10px;
+  }
 
-    .sidebar h2 {
-        font-size: 1.2rem;
-        margin-bottom: 20px;
-    }
+  .sidebar h2 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
 
-    .main-content {
-        padding: 20px 15px;
-    }
+  .main-content {
+    padding: 20px 15px;
+  }
 
-    .main-content h1 {
-        font-size: 1.4rem;
-    }
+  .main-content h1 {
+    font-size: 1.4rem;
+  }
 
-    .build-card {
-        padding: 12px;
-    }
+  .build-card {
+    padding: 12px;
+  }
 
-    .build-card h2 {
-        font-size: 1.2rem;
-    }
+  .build-card h2 {
+    font-size: 1.2rem;
+  }
 
-    .build-card p {
-        font-size: 0.95rem;
-    }
+  .build-card p {
+    font-size: 0.95rem;
+  }
 }
