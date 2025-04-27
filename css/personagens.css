@@ -1,184 +1,200 @@
 /* Reset básico */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #121212;
-    color: #f5f5f5;
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212;
+  color: #f5f5f5;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
-/* Sidebar (menu lateral) */
+/* Sidebar */
 .sidebar {
-    width: 220px;
-    background-color: #1e1e1e;
-    padding: 20px;
-    position: fixed;
-    height: 100%;
-    top: 0;
-    left: 0;
-    box-shadow: 2px 0 15px rgba(0, 255, 213, 0.3);
-    border-right: 3px solid #00ffd5;
-    transition: all 0.3s ease;
-    z-index: 10;
+  width: 220px;
+  background-color: #2c2c2c;
+  color: white;
+  padding: 20px;
+  position: fixed;
+  height: 100%;
+  top: 0;
+  left: 0;
+  box-shadow: 2px 0 15px rgba(0, 255, 213, 0.3);
+  border-right: 3px solid #00ffd5;
+  transition: all 0.3s ease; /* Transições aplicadas para animações */
 }
 
 .sidebar h2 {
-    font-size: 1.6rem;
-    color: #00ffd5;
-    margin-bottom: 40px;
-    text-align: center;
+  font-size: 30px;
+  color: #00ffd5;
+  margin-bottom: 40px;
+  text-align: center;
+  transition: color 0.3s ease; /* Transição suave na cor do título */
 }
 
-.sidebar ul {
-    list-style: none;
+/* Lista de links no menu */
+.menu-list {
+  list-style-type: none;
+  padding: 0;
 }
 
-.sidebar ul li {
-    margin: 25px 0;
+.menu-list li {
+  margin: 25px 0;
 }
 
-.sidebar ul li a {
-    text-decoration: none;
-    color: #f5f5f5;
-    transition: color 0.3s ease, padding-left 0.3s ease;
-    padding-left: 20px;
-    display: block;
-    border-left: 2px solid transparent;
-    font-size: 1.1rem;
+/* Links no menu */
+.menu-list a {
+  color: #f5f5f5;
+  text-decoration: none;
+  font-weight: 500;
+  padding-left: 20px;
+  transition: color 0.3s ease, padding-left 0.3s ease, border-left 0.3s ease; /* Transição suave em cor, padding e borda */
+  display: block;
+  border-left: 2px solid transparent;
+  font-size: 1.1rem;
 }
 
-.sidebar ul li a:hover {
-    color: #00ffd5;
-    border-left: 2px solid #00ffd5;
-    padding-left: 30px;
+/* Efeito de hover nos links */
+.menu-list a:hover {
+  color: #00ffd5;
+  border-left: 2px solid #00ffd5;
+  padding-left: 30px; /* Efeito de expansão do padding */
 }
-
-/* Conteúdo principal */
-.main-content {
+  /* Conteúdo principal */
+  .main-content {
     margin-left: 240px;
     padding: 40px;
     flex: 1;
-}
+  }
 
-.main-content h1 {
+  .main-content h1 {
     font-size: 2rem;
     margin-bottom: 30px;
     color: #00ffd5;
     text-align: center;
-}
+  }
 
-/* Cards de personagem */
-.personagem-card {
+  /* Container dos cards */
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  /* Estilo dos cards */
+  .personagem-card {
     background-color: #1e1e1e;
     border-left: 5px solid #00ffd5;
     border-radius: 10px;
     padding: 20px;
-    margin-bottom: 20px;
     box-shadow: 0 0 15px rgba(0, 255, 213, 0.15);
     transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
-}
+  }
 
-.personagem-card:hover {
+  .personagem-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 0 25px #00ffd5;
-}
+  }
 
-.personagem-card h2 {
+  .personagem-card h2 {
     color: #ffffff;
     margin-bottom: 10px;
-}
+  }
 
-.personagem-card p {
+  .personagem-card p {
     color: #f5f5f5;
-    margin-bottom: 8px; /* Ajustando o espaçamento entre as linhas */
-    line-height: 1.6; /* Aumentando a altura da linha para facilitar a leitura */
-}
+    margin-bottom: 8px;
+    line-height: 1.6;
+  }
 
-/* Responsividade para tablets */
-@media (max-width: 768px) {
+  .personagem-card strong {
+    color: #00ffd5;
+  }
+
+  /* Responsividade */
+  @media screen and (max-width: 768px) {
     .sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
-        border-right: none;
-        border-bottom: 3px solid #00ffd5;
-        box-shadow: 0 2px 15px rgba(0, 255, 213, 0.3);
-        text-align: center;
+      width: 100%;
+      height: auto;
+      position: relative;
+      border-right: none;
+      border-bottom: 3px solid #00ffd5;
+      box-shadow: 0 2px 15px #00ffd54d;
+      text-align: center;
     }
 
-    .sidebar ul li a {
-        padding-left: 0;
-        font-size: 1rem;
-        border: none;
+    .menu-list a {
+      padding-left: 0;
+      font-size: 1rem;
+      border: none;
     }
 
-    .sidebar ul {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 20px;
+    .menu-list {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
     }
 
     .main-content {
-        margin-left: 0;
-        padding: 30px 20px;
+      margin-left: 0;
+      padding: 30px 20px;
     }
 
     .main-content h1 {
-        font-size: 1.6rem;
+      font-size: 1.6rem;
     }
 
     .personagem-card {
-        padding: 15px;
+      padding: 15px;
     }
 
     .personagem-card h2 {
-        font-size: 1.4rem;
+      font-size: 1.4rem;
     }
 
     .personagem-card p {
-        font-size: 1rem;
+      font-size: 1rem;
     }
-}
+  }
 
-/* Responsividade para celulares */
-@media (max-width: 480px) {
+  /* Responsividade para celulares */
+  @media screen and (max-width: 480px) {
     .sidebar {
-        padding: 10px;
+      padding: 10px;
     }
 
     .sidebar h2 {
-        font-size: 1.2rem;
-        margin-bottom: 20px;
+      font-size: 1.2rem;
+      margin-bottom: 20px;
     }
 
     .main-content {
-        padding: 20px 15px;
+      padding: 20px 15px;
     }
 
     .main-content h1 {
-        font-size: 1.4rem;
+      font-size: 1.4rem;
     }
 
     .personagem-card {
-        padding: 12px;
+      padding: 12px;
     }
 
     .personagem-card h2 {
-        font-size: 1.2rem;
+      font-size: 1.2rem;
     }
 
     .personagem-card p {
-        font-size: 0.95rem;
+      font-size: 0.95rem;
     }
-}
+  }
+
 
 
 
